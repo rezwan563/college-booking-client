@@ -34,7 +34,7 @@ const Banner = () => {
         <img
           src="https://plus.unsplash.com/premium_photo-1661954193886-5dc154beaba2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGNhbXB1cyUyMGxpZmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
           alt=""
-          className="place-self-auto md:place-self-center order-first"
+          className="place-self-auto md:place-self-center order-first shadow-sm"
         />
       </div>
      

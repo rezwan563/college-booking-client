@@ -1,33 +1,35 @@
 import { useState } from "react";
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [dropDownClicked, setDropDownClicked] = useState(false);
-
-  const user = (
-    <>
-      <p className="mx-4">Abdul Hossain</p>
-    </>
-  );
+  // TODO: dynamic user data usecontext
+  const user = false
   const navItems = (
     <>
-      <li className="md:hidden underline underline-offset-4 cursor-pointer py-3">
-        {user}
-      </li>
-      <li className="mx-4">Home</li>
-      <li className="mx-4">Admission</li>
-      <li className="mx-4">My College</li>
-      <li
-        className="hidden md:block underline underline-offset-4 cursor-pointer"
+     { user ? <li className="md:hidden underline underline-offset-4 cursor-pointer py-3">
+        Abdul Hossain 
+      </li> : ''}
+      <li className="mx-4"><Link to='/'>Home</Link></li>
+      <li className="mx-4"><Link to='/colleges'>Colleges</Link></li>
+      <li className="mx-4"><Link to='admission'>Admission</Link></li>
+      <li className="mx-4"><Link to='my_college'>My College</Link></li>
+      {
+        user ? <li
+        className="hidden md:block underline underline-offset-4 cursor-pointer mr-4"
         onClick={() => {
           setDropDownClicked(!dropDownClicked);
         }}
       >
-        {user}
-      </li>
-      <li className="block mx-4 md:hidden underline underline-offset-4 cursor-pointer">
+        Abdul Hossain
+      </li> : <li className="hidden md:block underline underline-offset-4 cursor-pointer mr-4"><Link to='/login'>Login</Link></li>
+      }
+      {
+        user? <li className="block mx-4 md:hidden underline underline-offset-4 cursor-pointer">
         Logout
-      </li>
+      </li> : <li className="block mx-4 md:hidden underline underline-offset-4 cursor-pointer">Login</li>
+      }
     </>
   );
   return (

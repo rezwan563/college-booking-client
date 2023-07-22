@@ -4,28 +4,43 @@ import Admission from "../pages/admission/Admission";
 import MyCollege from "../pages/mycollege/MyCollege";
 import Main from "../pages/main/Main";
 import ErrorPage from "../pages/error/ErrorPage";
+import Colleges from "../pages/colleges/Colleges";
+import Login from "../pages/login/Login";
+import Register from "../pages/register/Register";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
-    children:[
-        {
-            path: '/',
-            element: <Homepage/>,
-        },
-        {
-            path: '/admission',
-            element: <Admission/>,
-        },
-        {
-            path: 'my_college',
-            element: <MyCollege/>
-        },
-        {
-            path:"*",
-            element:<ErrorPage/>
-        }
+    element: <Main />,
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/colleges",
+        element: <Colleges />,
+      },
+      {
+        path: "/admission",
+        element: <Admission />,
+      },
+      {
+        path: "my_college",
+        element: <MyCollege />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
     ],
   },
 ]);
