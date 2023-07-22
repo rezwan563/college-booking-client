@@ -6,11 +6,11 @@ const CollegeSection = () => {
     <div className="my-8 md:my-20">
       <div>
         <SectionTitle title="top colleges" />
-       <div className="flex justify-evenly">
-<CollegeCard/>
-<CollegeCard/>
-<CollegeCard/>
-       </div>
+        <div className="grid md:flex justify-evenly">
+          <CollegeCard />
+          <CollegeCard />
+          <CollegeCard />
+        </div>
       </div>
     </div>
   );
