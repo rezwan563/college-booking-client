@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-slate-100 ">
       <div className="grid gap-5 md:grid-cols-2">
-        <p className="w-full md:w-2/3 text-left px-5">
+        <div className="w-full md:w-2/3 text-left px-5">
           <span className="text-2xl md:text-5xl ">
             CollegeServiceHub: Your Ultimate College Booking Service
           </span>
@@ -30,7 +30,7 @@ const Banner = () => {
           <div className="bg-white max-h-48 p-2 mt-2 overflow-y-scroll">
             <SearchResult />
           </div>
-        </p>
+        </div>
         <img
           src="https://plus.unsplash.com/premium_photo-1661954193886-5dc154beaba2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGNhbXB1cyUyMGxpZmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
           alt=""

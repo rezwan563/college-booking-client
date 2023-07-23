@@ -36,7 +36,7 @@ const Header = () => {
     <div>
       <div className="relative">
         <div className="h-16 md:h-28 px-2 flex justify-between items-center shadow-md">
-          <p>Your College Guide</p>
+          <p>CollegeService</p>
           <ul className="hidden md:flex gap-16">{navItems}</ul>
           {showMenu ? (
             <AiOutlineMenuUnfold

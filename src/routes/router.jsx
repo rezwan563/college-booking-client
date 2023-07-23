@@ -7,6 +7,7 @@ import ErrorPage from "../pages/error/ErrorPage";
 import Colleges from "../pages/colleges/Colleges";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import CollegeDetails from "../pages/collegedetails/CollegeDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "my_college",
         element: <MyCollege />,
+      },
+      {
+        path:'/:id/:name',
+        element: <CollegeDetails/>
       },
       {
         path: "login",

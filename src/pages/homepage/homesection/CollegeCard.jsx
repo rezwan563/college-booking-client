@@ -1,24 +1,30 @@
-const CollegeCard = () => {
+/* eslint-disable react/prop-types */
+import { Link, useParams } from "react-router-dom";
+
+const CollegeCard = ({college}) => {
+  const {_id, name, img, ad, established, students, history, sports} = college
+  const adDate = ad.slice(0, 9);
+
   return (
     <div className="w-full md:w-1/4 my-12 md:mt-36 flex flex-col bg-white border shadow-sm rounded-xl border-l-8 border-b-4">
       <img
-        className="w-full h-auto rounded-t-xl"
-        src="https://i.ibb.co/nwYWqH7/7-1-scaled.webp"
+        className="w-full h-48 rounded-t-xl"
+        src={img ? img : ''}
         alt="Image Description"
       />
       <div className="p-4 md:p-5">
         <div className="flex justify-between items-center ">
-          <h3 className="text-xl font-bold">Standford University</h3>
-          <span className="text-2xl font-semibold ">#3</span>
+          <h3 className="text-xl font-bold">{name ? name : ''}</h3>
+          {/* <span className="text-2xl font-semibold ">#3</span> */}
         </div>
         <div className="">
           <p className="font-bold text-lg animate-pulse">
-            Addmission Date: 22 August, 2023
+            Addmission Date: {adDate ? adDate : ''}
           </p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-3">
-            <p className="font-semibold">Established: 1886</p>
-            <p className="font-semibold">Students: 17,000+</p>
-            <p className="font-semibold">Faculty: 2000+</p>
+            <p className="font-semibold">Established: {established ? established : ''}</p>
+            <p className="font-semibold">Students: {students ? students: ''}</p>
+            {/* <p className="font-semibold">Faculty: 2000+</p> */}
           </div>
           <div className="grid grid-cols-1 mt-8">
             <div>
@@ -32,25 +38,23 @@ const CollegeCard = () => {
             <div>
               <p className="text-lg font-semibold">Research</p>
               <p className="">
-                Stanford University, founded in 1885, has a rich research
-                history. It played a vital role in World War II, birthed Silicon
-                Valley, and excelled in medical breakthroughs and space
-                exploration. Known for Nobel laureates and an entrepreneurial
-                spirit, it continues to be a leading force in diverse fields.
+             {history ? history : ''}
               </p>
             </div>
             <div>
               <p className="text-lg font-semibold">Sports</p>
-              <p>
-                Stanford excels in sports with 126 NCAA team championships and
-                24 consecutive Directors Cups for overall excellence, showcasing
-                its athletic prowess and commitment to success.
-              </p>
+             <ul className="grid grid-cols-2 list-inside list-disc">
+              {
+                sports ? sports.map((sport, index) => (
+                  <li key={index}>{sport}</li> 
+                )) : ''
+              }
+             </ul>
             </div>
           </div>
         </div>
         <button className="text-yellow-700 underline underline-offset-2 my-4 cursor-pointer hover:text-yellow-600">
-          More Details...
+         <Link to ={`/${_id}/${name}`}> More Details...</Link>
         </button>
       </div>
     </div>

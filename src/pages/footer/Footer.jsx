@@ -2,7 +2,6 @@
 const Footer = () => {
     const currentDate = new Date()
     const year = currentDate.getFullYear()
-    console.log(year);
     return (
         <footer className="w-full  bg-gray-100 p-8">
         <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12  text-center md:justify-between">

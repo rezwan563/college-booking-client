@@ -25,7 +25,7 @@ const SuccessStory = () => {
               <div className="">
                 <iframe
                   width="1280"
-                  height="540"
+                  height="1080"
                   src="https://www.youtube.com/embed/tU2yz6KbKfk"
                   title="YouTube video player"
                   frameBorder="0"
